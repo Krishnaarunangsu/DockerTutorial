@@ -1,0 +1,17 @@
+FROM node:22.9-alpine3.19
+
+# Initial current working directory
+ENV DIRPATH=/project
+WORKDIR ${DIRPATH}
+
+# RUN npm install
+
+RUN echo 'Krishna' >>  Jagannath.txt
+
+# New current working directory
+# WORKDIR ./project2
+
+# Nested current working directory
+#WORKDIR ./project2
+
+CMD ["/bin/sh"]

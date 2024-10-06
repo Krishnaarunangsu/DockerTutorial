@@ -1,0 +1,19 @@
+FROM ubuntu:latest
+
+# Default Arguments
+ARG GREET=GeeksforGeeks
+
+# Initial current working directory
+ENV DIRPATH=/project
+WORKDIR ${DIRPATH}
+
+# RUN npm install
+
+RUN echo 'Welcome to ' ${GREET} >>  Jagannath.txt
+# New current working directory
+# WORKDIR ./project2
+
+# Nested current working directory
+#WORKDIR ./project2
+
+CMD ["cat", "Jagannath.txt"]

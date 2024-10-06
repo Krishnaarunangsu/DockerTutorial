@@ -1,17 +1,19 @@
-FROM node:22.9-alpine3.19
+# syntax=docker/dockerfile:experimental
+# ARG UBUNTU_VERSION=22.04 //Default value provided
+# ARG CUDA_VERSION=9.0 //Default value provided
 
-# Initial current working directory
-ENV DIRPATH=/project
-WORKDIR ${DIRPATH}
 
-# RUN npm install
+FROM ubuntu:22.04
 
-RUN echo 'Krishna' >>  Jagannath.txt
+ARG UBUNTU_VERSION=22.04 //Default value provided
+ARG CUDA_VERSION=9.0 //Default value provided
 
-# New current working directory
-# WORKDIR ./project2
+WORKDIR /project
 
-# Nested current working directory
-#WORKDIR ./project2
+RUN echo ${CUDA_VERSION} >> Krishna.txt
 
-CMD ["/bin/sh"]
+#ARG UBUNTU_VERSION=22.04 
+RUN echo ${UBUNTU_VERSION} >> Jagannath.txt
+RUN echo ${CUDA_VERSION} >> Narayan.txt
+
+CMD [ "/bin/sh" ]
