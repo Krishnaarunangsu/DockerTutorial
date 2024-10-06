@@ -1,22 +1,16 @@
-# Pull the ubuntu base image
-#FROM ubuntu:22.04
+FROM node:22.9-alpine3.19
 
-# Print the current Working Directory
-# RUN pwd
-#RUN mkdir Krishna
-FROM ubuntu:22.04
+# Initial current working directory
+WORKDIR /project
 
-#RUN echo 'APT::Install-Suggests "0";' >> /etc/apt/apt.conf.d/00-docker
+# RUN npm install
 
-#RUN echo 'APT::Install-Recommends "0";' >> /etc/apt/apt.conf.d/00-docker
+RUN echo 'Krishna' >>  Jagannath.txt
 
-#RUN DEBIAN_FRONTEND=noninteractive \
-#  apt-get update \
-#  && apt-get install -y python3 \
-#  && rm -rf /var/lib/apt/lists/*
+# New current working directory
+# WORKDIR ./project2
 
-RUN mkdir Jagannath
+# Nested current working directory
+WORKDIR ./project2
 
-RUN useradd -ms /bin/bash apprunner
-
-USER apprunner
+CMD ["/bin/sh"]
