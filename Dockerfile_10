@@ -1,0 +1,10 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+ENV LOG_LEVEL=debug
+
+
+RUN echo ${LOG_LEVEL} >> Krishna.txt
+
+CMD ["/bin/sh"]
